@@ -60,10 +60,11 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
             const SizedBox(height: 5),
             MyInputWidget(
               focusNode: fPesquisa,
-              hintText: '',
-              label: 'Pesquisar',
+              hintText: 'Digite uma categoria ou titulo',
               textEditingController: cPesquisa,
-              onChanged: (value) {},
+              onChanged: (value) {
+                widget.getAudiosStore.filtrarAudios(value!);
+              },
             ),
             const SizedBox(height: 10),
             Expanded(
@@ -78,14 +79,17 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
                   );
                 }
 
-                final audios = widget.getAudiosStore.listAudios;
-
                 final categorias = widget.getAudiosStore.getCategorias();
 
                 return ListView.builder(
                     itemCount: categorias.length,
                     itemBuilder: (context, index) {
                       final categoria = categorias[index];
+
+                      final audios = state.filteredAudios
+                          .where((e) => e.categoria == categoria)
+                          .toList();
+
                       late bool visibility = false;
 
                       if (index == 0 ||
@@ -115,16 +119,14 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
                               mainAxisSpacing: 10,
                               crossAxisSpacing: 10,
                             ),
-                            itemCount: audios
-                                .where((e) => e.categoria == categoria)
-                                .length,
-                            itemBuilder: (context, index) {
-                              final audio = audios[index];
+                            itemCount: audios.length,
+                            itemBuilder: (context, indexGrid) {
+                              final audio = audios[indexGrid];
 
                               return ButtonAudioWidget(
                                 audio: audio,
                                 audioStore: widget.audioStore,
-                                index: index,
+                                index: indexGrid,
                               );
                             },
                           ),

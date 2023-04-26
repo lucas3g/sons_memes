@@ -8,7 +8,7 @@ class MyInputWidget extends StatefulWidget {
   final FocusNode focusNode;
   final TextInputType keyboardType;
   final String hintText;
-  final String label;
+  final String? label;
   final bool obscureText;
   final Widget? suffixIcon;
   final int? maxLines;
@@ -33,7 +33,7 @@ class MyInputWidget extends StatefulWidget {
     required this.focusNode,
     this.keyboardType = TextInputType.text,
     required this.hintText,
-    required this.label,
+    this.label,
     this.obscureText = false,
     this.suffixIcon,
     this.maxLines,
@@ -97,10 +97,12 @@ class _MyInputWidgetState extends State<MyInputWidget> {
       controller: widget.textEditingController,
       decoration: InputDecoration(
         hintText: widget.hintText,
-        label: Text(
-          widget.label,
-          style: AppTheme.textStyles.labelButtonLogin,
-        ),
+        label: widget.label != null
+            ? Text(
+                widget.label!,
+                style: AppTheme.textStyles.labelButtonLogin,
+              )
+            : null,
         suffixIcon: widget.suffixIcon,
         filled: true,
         isDense: true,

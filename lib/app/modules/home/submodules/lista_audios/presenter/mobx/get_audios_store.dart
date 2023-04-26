@@ -29,22 +29,23 @@ abstract class _GetAudiosStoreBase with Store {
     _state = state;
   }
 
-  @computed
+  @action
   List<String> getCategorias() {
-    Set<String> categorias = <String>{};
-    for (int i = 0; i < listAudios.length; i++) {
-      categorias.add(listAudios[i].categoria);
+    final Set<String> categorias = {};
+
+    final audios = (state as GetSuccesAudioState).filteredAudios;
+
+    for (int i = 0; i < audios.length; i++) {
+      categorias.add(audios[i].categoria);
     }
 
-    final listCategorias = categorias.toList();
-
-    return listCategorias;
+    return categorias.toList();
   }
 
   @action
   Future getAllAudiosDB() async {
     try {
-      emit(GetLoadingAudioState());
+      emit(state.loading());
 
       const filter =
           FilterEntity(name: 'assets', value: 1, type: FilterType.equal);
@@ -58,13 +59,18 @@ abstract class _GetAudiosStoreBase with Store {
 
       final List<Audio> list = List.from(result.map(Audio.toEntity).toList());
 
-      list.sort((a, b) => b.id.compareTo(a.id));
+      list.sort((a, b) => a.categoria.compareTo(b.categoria));
 
       listAudios = ObservableList.of(list);
 
-      emit(GetSuccesAudioState());
+      emit(state.success(audios: listAudios));
     } catch (e) {
-      emit(GetErrorAudioState(message: e.toString()));
+      emit(state.error(e.toString()));
     }
+  }
+
+  @action
+  void filtrarAudios(String filtro) {
+    emit(state.success(filtro: filtro));
   }
 }

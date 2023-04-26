@@ -49,6 +49,31 @@ mixin _$GetAudiosStore on _GetAudiosStoreBase, Store {
     return _$getAllAudiosDBAsyncAction.run(() => super.getAllAudiosDB());
   }
 
+  late final _$_GetAudiosStoreBaseActionController =
+      ActionController(name: '_GetAudiosStoreBase', context: context);
+
+  @override
+  List<String> getCategorias() {
+    final _$actionInfo = _$_GetAudiosStoreBaseActionController.startAction(
+        name: '_GetAudiosStoreBase.getCategorias');
+    try {
+      return super.getCategorias();
+    } finally {
+      _$_GetAudiosStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void filtrarAudios(String filtro) {
+    final _$actionInfo = _$_GetAudiosStoreBaseActionController.startAction(
+        name: '_GetAudiosStoreBase.filtrarAudios');
+    try {
+      return super.filtrarAudios(filtro);
+    } finally {
+      _$_GetAudiosStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
