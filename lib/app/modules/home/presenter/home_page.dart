@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage>
                   ),
                   Visibility(
                     visible: Constants.currentIndex != 0,
-                    child: const Text('Kuduro'),
+                    child: const Text('Memes'),
                   ),
                 ],
               ),

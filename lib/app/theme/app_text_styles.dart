@@ -29,6 +29,8 @@ abstract class AppTextStyles {
   TextStyle get titleModal;
   TextStyle get labelButtonLogin;
   TextStyle get labelMinutesAudioPlayer;
+  TextStyle get titleLabelListaAudios;
+  TextStyle get labelFiltro;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -191,6 +193,27 @@ class AppTextStylesDefault implements AppTextStyles {
   TextStyle get labelMinutesAudioPlayer => GoogleFonts.roboto(
         fontSize: 14,
         color: AppTheme.colors.primary,
+        fontWeight: FontWeight.bold,
+      );
+
+  @override
+  TextStyle get titleLabelListaAudios => GoogleFonts.inter(
+        fontSize: 20,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        shadows: [
+          const Shadow(
+            blurRadius: 8,
+            color: Colors.black38,
+            offset: Offset(0, 5),
+          )
+        ],
+      );
+
+  @override
+  TextStyle get labelFiltro => GoogleFonts.roboto(
+        fontSize: 16,
+        color: Colors.white,
         fontWeight: FontWeight.bold,
       );
 }

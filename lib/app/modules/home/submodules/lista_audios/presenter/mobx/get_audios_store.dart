@@ -29,6 +29,18 @@ abstract class _GetAudiosStoreBase with Store {
     _state = state;
   }
 
+  @computed
+  List<String> getCategorias() {
+    Set<String> categorias = <String>{};
+    for (int i = 0; i < listAudios.length; i++) {
+      categorias.add(listAudios[i].categoria);
+    }
+
+    final listCategorias = categorias.toList();
+
+    return listCategorias;
+  }
+
   @action
   Future getAllAudiosDB() async {
     try {
