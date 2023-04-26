@@ -99,6 +99,7 @@ flutter:
     - assets/audios/kuduro/
     - assets/audios/leo_stronda/
     - assets/audios/tiringa/
+    - assets/audios/smzinho/
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
