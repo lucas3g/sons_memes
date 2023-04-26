@@ -272,7 +272,7 @@ final List<Audio> listAudios = [
     id: -12,
     name: 'O miseravel é um gênio',
     categoria: 'Dragon Ball',
-    filePath: 'audios/leo_stronda/e-um-genio.mp3',
+    filePath: 'audios/dragon-ball/e-um-genio.mp3',
     buttonColor: randomColor(),
     assets: true,
     favorito: false,
