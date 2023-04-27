@@ -81,6 +81,16 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
 
                 final categorias = widget.getAudiosStore.getCategorias();
 
+                if (categorias.isEmpty) {
+                  return Center(
+                    child: Text(
+                      'Nenhum som encontado :(',
+                      style: AppTheme.textStyles.titleAppBar,
+                      textAlign: TextAlign.center,
+                    ),
+                  );
+                }
+
                 return ListView.builder(
                     itemCount: categorias.length,
                     itemBuilder: (context, index) {

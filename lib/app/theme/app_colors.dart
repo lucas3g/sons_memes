@@ -59,7 +59,7 @@ class AppColorDefault implements AppColors {
   //009342 - PAPAGAIO - cf1f36 BIO //004357 Cor legal
   //246EE9 Royal Blue //FF2400 Scarlet Red //3EB489 Mint Green
   @override
-  String get colorFinal => '5C6BC0';
+  String get colorFinal => '1E1E1E';
 
   @override
   int get hexFinal => int.parse('$hex$colorFinal');
