@@ -53,11 +53,11 @@ mixin _$GetAudiosStore on _GetAudiosStoreBase, Store {
       ActionController(name: '_GetAudiosStoreBase', context: context);
 
   @override
-  List<String> getCategorias() {
+  List<String> getCategorias(List<Audio> filteredAudios) {
     final _$actionInfo = _$_GetAudiosStoreBaseActionController.startAction(
         name: '_GetAudiosStoreBase.getCategorias');
     try {
-      return super.getCategorias();
+      return super.getCategorias(filteredAudios);
     } finally {
       _$_GetAudiosStoreBaseActionController.endAction(_$actionInfo);
     }

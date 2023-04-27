@@ -30,13 +30,11 @@ abstract class _GetAudiosStoreBase with Store {
   }
 
   @action
-  List<String> getCategorias() {
+  List<String> getCategorias(List<Audio> filteredAudios) {
     final Set<String> categorias = {};
 
-    final audios = (state as GetSuccesAudioState).filteredAudios;
-
-    for (int i = 0; i < audios.length; i++) {
-      categorias.add(audios[i].categoria);
+    for (Audio audio in filteredAudios) {
+      categorias.add(audio.categoria);
     }
 
     return categorias.toList();

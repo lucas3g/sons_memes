@@ -44,7 +44,7 @@ class _FavoritoPageState extends State<FavoritoPage> {
             if (audios.isEmpty) {
               return Center(
                 child: Text(
-                  'Nenhum audio salvo como favorito :(',
+                  'Nenhum som salvo como favorito :(',
                   style: AppTheme.textStyles.titleAppBar,
                   textAlign: TextAlign.center,
                 ),

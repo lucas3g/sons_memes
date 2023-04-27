@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage>
                   ),
                   Visibility(
                     visible: Constants.currentIndex != 1,
-                    child: const Text('Meus Audios'),
+                    child: const Text('Meus Sons'),
                   ),
                 ],
               ),

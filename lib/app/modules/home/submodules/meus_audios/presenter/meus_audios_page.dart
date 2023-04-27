@@ -92,7 +92,7 @@ class _MeusAudiosPageState extends State<MeusAudiosPage> {
                 return Expanded(
                   child: Center(
                     child: Text(
-                      'Nenhum audio encontrado.',
+                      'Nenhum som encontrado :(',
                       style: AppTheme.textStyles.titleAppBar,
                     ),
                   ),

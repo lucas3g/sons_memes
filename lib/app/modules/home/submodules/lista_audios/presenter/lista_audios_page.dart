@@ -71,7 +71,7 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
               child: Observer(builder: (context) {
                 final state = widget.getAudiosStore.state;
 
-                if (state is GetLoadingAudioState) {
+                if (state is! GetSuccesAudioState) {
                   return const Center(
                     child: CircularProgressIndicator(
                       color: Colors.white,
@@ -79,7 +79,8 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
                   );
                 }
 
-                final categorias = widget.getAudiosStore.getCategorias();
+                final categorias =
+                    widget.getAudiosStore.getCategorias(state.filteredAudios);
 
                 if (categorias.isEmpty) {
                   return Center(
