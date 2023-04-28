@@ -95,7 +95,7 @@ class _ButtonAudioWidgetState extends State<ButtonAudioWidget> {
               child: GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                childAspectRatio: Constants.currentIndex == 1 ? 2 : 1.2,
+                childAspectRatio: Constants.currentIndex == 1 ? 1.7 : 1.2,
                 children: [
                   IconButton(
                     onPressed: () async {

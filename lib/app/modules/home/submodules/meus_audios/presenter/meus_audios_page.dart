@@ -100,24 +100,36 @@ class _MeusAudiosPageState extends State<MeusAudiosPage> {
               }
 
               return Expanded(
-                child: GridView.builder(
-                  padding: const EdgeInsets.only(top: 10, bottom: 15),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.85,
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                  ),
-                  itemCount: audios.length,
-                  itemBuilder: (context, index) {
-                    final audio = audios[index];
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Meus Sons',
+                      style: AppTheme.textStyles.titleLabelListaAudios,
+                    ),
+                    Expanded(
+                      child: GridView.builder(
+                        padding: const EdgeInsets.only(top: 10, bottom: 15),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio: 0.78,
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 10,
+                        ),
+                        itemCount: audios.length,
+                        itemBuilder: (context, index) {
+                          final audio = audios[index];
 
-                    return ButtonAudioWidget(
-                      audio: audio,
-                      audioStore: widget.audioStore,
-                      index: index,
-                    );
-                  },
+                          return ButtonAudioWidget(
+                            audio: audio,
+                            audioStore: widget.audioStore,
+                            index: index,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               );
             })
