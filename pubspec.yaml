@@ -96,10 +96,13 @@ flutter:
     - assets/audios/aleatorio/
     - assets/audios/bil/
     - assets/audios/dragon-ball/
+    - assets/audios/jukes/
     - assets/audios/kuduro/
     - assets/audios/leo_stronda/
     - assets/audios/tiringa/
     - assets/audios/smzinho/
+    - assets/audios/hastad/
+    - assets/audios/yoda/
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see

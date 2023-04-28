@@ -60,7 +60,7 @@ class _ListaAudiosPageState extends State<ListaAudiosPage> {
             const SizedBox(height: 5),
             MyInputWidget(
               focusNode: fPesquisa,
-              hintText: 'Digite uma categoria ou titulo',
+              hintText: 'Digite uma categoria ou título',
               textEditingController: cPesquisa,
               onChanged: (value) {
                 widget.getAudiosStore.filtrarAudios(value!);
