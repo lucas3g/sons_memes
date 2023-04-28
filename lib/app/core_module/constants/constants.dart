@@ -6,7 +6,7 @@ import 'package:sons_memes/app/modules/home/submodules/lista_audios/domain/entit
 const bannerID = 'ca-app-pub-1898798427054986/3785290002';
 const intersticialID = 'ca-app-pub-1898798427054986/7968981556';
 
-const labelGeral = 'Sons de Memes';
+const labelGeral = 'Sons Memes';
 
 Color randomColor() {
   final colors = [
@@ -25,6 +25,15 @@ Color randomColor() {
 }
 
 final List<Audio> listAudios = [
+  Audio(
+    id: -48,
+    name: 'Awn zé da manga',
+    categoria: 'Aleatório',
+    filePath: 'audios/aleatorio/ze-da-manga.mp3',
+    buttonColor: randomColor(),
+    assets: true,
+    favorito: false,
+  ),
   Audio(
     id: -47,
     name: 'Só um chupinho',
