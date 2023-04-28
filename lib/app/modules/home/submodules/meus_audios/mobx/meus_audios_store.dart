@@ -89,6 +89,7 @@ abstract class _MeusAudiosStoreBase with Store {
             table: Tables.meus_audios,
             data: {
               'title': title,
+              'categoria': 'Meus Sons',
               'path_file': result,
               'button_color': randomColor().toHex(),
               'assets': 0,
@@ -97,16 +98,16 @@ abstract class _MeusAudiosStoreBase with Store {
           );
 
           await db.create(params);
-          MySnackBar(message: 'Audio salvo com sucesso!');
+          MySnackBar(message: 'Som salvo com sucesso!');
           file = File('');
           return true;
         } else {
-          MySnackBar(message: 'Erro ao tentar salvar audio!');
+          MySnackBar(message: 'Erro ao tentar salvar som!');
           file = File('');
           return false;
         }
       }
-      MySnackBar(message: 'Selecione um audio.');
+      MySnackBar(message: 'Selecione um som.');
       return false;
     } catch (e) {
       MySnackBar(message: e.toString());

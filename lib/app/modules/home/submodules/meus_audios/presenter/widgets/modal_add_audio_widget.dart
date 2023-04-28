@@ -60,7 +60,7 @@ class _ModalAddAudioWidgetState extends State<ModalAddAudioWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Adicionar novo audio',
+                'Adicionar novo som',
                 style: AppTheme.textStyles.titleModal,
               ),
               const Divider(),
@@ -89,7 +89,7 @@ class _ModalAddAudioWidgetState extends State<ModalAddAudioWidget> {
                           await widget.store.procurarAudio();
                         },
                         child: Text(
-                          'Procurar audio',
+                          'Procurar som',
                           style: AppTheme.textStyles.button.copyWith(
                             color: AppTheme.colors.primary,
                           ),

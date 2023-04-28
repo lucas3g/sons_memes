@@ -21,7 +21,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   Future carregaDados() async {
     BotToast.showText(
-      text: 'Carregando audios',
+      text: 'Carregando sons',
       duration: const Duration(seconds: 5),
     );
     BotToast.showLoading(
