@@ -62,7 +62,7 @@ class _MeusAudiosPageState extends State<MeusAudiosPage> {
                     ),
                     child: MyInputWidget(
                       focusNode: fPesquisa,
-                      hintText: 'Digite o titulo do audio',
+                      hintText: 'Digite o titulo do som',
                       label: 'Pesquisar',
                       textEditingController: searchController,
                       onChanged: (v) {
