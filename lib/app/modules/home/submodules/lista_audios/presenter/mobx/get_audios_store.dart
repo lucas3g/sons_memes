@@ -57,7 +57,15 @@ abstract class _GetAudiosStoreBase with Store {
 
       final List<Audio> list = List.from(result.map(Audio.toEntity).toList());
 
-      list.sort((a, b) => a.categoria.compareTo(b.categoria));
+      list.sort((a, b) {
+        final int compareCategoria = a.categoria.compareTo(b.categoria);
+
+        if (compareCategoria != 0) {
+          return compareCategoria;
+        }
+
+        return a.name.compareTo(b.name);
+      });
 
       listAudios = ObservableList.of(list);
 
