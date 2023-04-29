@@ -1,4 +1,4 @@
-package com.example.sons_memes
+package com.maktub.sonsmemes
 
 import io.flutter.embedding.android.FlutterActivity
 
